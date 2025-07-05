@@ -1,0 +1,31 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Asegura que esté por encima del contenido */
+  display: flex;
+}
+
+#h{
+  background-color: gold;
+}
+
+span {
+  margin: auto;
+  text-align: center;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  text-align: center;
+  margin: 0px 2px;
+}
+.content{
+  margin-top: 75px;/* Ajusta según la altura de tu toolbar */
+}

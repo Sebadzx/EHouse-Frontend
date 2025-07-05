@@ -1,0 +1,36 @@
+<mat-card class="example-card">
+  <mat-card-title>Formulario de Reseña</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="reseniaForm" class="form-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Puntuación</mat-label>
+        <input matInput formControlName="puntuacion" placeholder="Ingresa la puntuacion" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha de Reseña</mat-label>
+        <input matInput [matDatepicker]="pickerResenia" formControlName="fechaResenia"
+               placeholder="Seleccione la fecha de la resenia" />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="pickerResenia"></mat-datepicker-toggle>
+        <mat-datepicker #pickerResenia></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <input matInput formControlName="descripcionResenia" placeholder="Datos de la resenia" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Usuario</mat-label>
+        <mat-select formControlName="usuario" [(value)]="idUsuarioSelec" required>
+          <mat-option *ngFor="let c of lista" [value]="c.idUsuario">
+            {{ c.nombreUsuario }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="onSubmit()">Registrar</button>
+    </form>
+  </mat-card-content>
+</mat-card>

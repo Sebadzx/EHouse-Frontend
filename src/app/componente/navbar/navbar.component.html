@@ -1,0 +1,35 @@
+<mat-toolbar  class="header">
+  <mat-toolbar-row>
+    <img
+      class="nav__logo"
+      src="images/icon-House.png"
+      width="auto"
+      height="50px"
+    />
+    <span>Bienvenido {{nombre}}</span>
+    <button id="h" mat-raised-button [routerLink]="'/home'" >Home</button>
+    <button mat-raised-button [routerLink]="'/usuarios'">Usuarios</button>
+    <button mat-raised-button [routerLink]="'/new-usuario'">Nuevo Usuario</button>
+    <button mat-raised-button [routerLink]="'/hoteles'">Hoteles</button>
+    <button mat-raised-button [routerLink]="'/new-hotel'">Nuevo Hotel</button>
+    <button mat-raised-button [routerLink]="'/habitacion'">Habitaciones</button>
+    <button mat-raised-button [routerLink]="'/new-habitacion'">Nueva Habitacion</button>
+    <button mat-raised-button [routerLink]="'/reservas'">Reservas</button>
+    <button mat-raised-button [routerLink]="'/new-reserva'">Nuevo Reserva</button>
+    <button mat-raised-button [routerLink]="'/resenias'">Resenias</button>
+    <button mat-raised-button [routerLink]="'/new-resenia'">Nueva Resenia</button>
+    <button mat-raised-button [routerLink]="'/numero-habitaciones'">Nro Habitaciones</button>
+    <button mat-raised-button [routerLink]="'/habFavorita'">Habitacion Fav.</button>
+    <button mat-raised-button [routerLink]="'/login'">Logout</button>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- Resto del contenido de la página -->
+<div class="content">
+  <!-- Aquí va el contenido de la página -->
+</div>
+<!--
+importar en styles.css el siguiente código:
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+para activar los colores: primary (azul), accent(rosado) y warn (rojo)
+-->

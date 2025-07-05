@@ -1,0 +1,83 @@
+<mat-card class="example-card">
+  <mat-card-title>Formulario de reserva</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="reservaForm" class="form-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Cantidad de Personas</mat-label>
+        <input matInput formControlName="cantidadPersonas" placeholder="Ingresar cantidad de personas" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha de Reserva</mat-label>
+        <input matInput [matDatepicker]="pickerReserva" formControlName="fecha_reserva"
+               placeholder="Seleccione la fecha de la reserva" />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="pickerReserva"></mat-datepicker-toggle>
+        <mat-datepicker #pickerReserva></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha de inicio de reserva</mat-label>
+        <input matInput [matDatepicker]="pickerI" formControlName="fechaInicio"
+               placeholder="Seleccione la fecha de inicio de la reserva" />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="pickerI"></mat-datepicker-toggle>
+        <mat-datepicker #pickerI></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha de fin de reserva</mat-label>
+        <input matInput [matDatepicker]="pickerF" formControlName="fechaFin"
+               placeholder="Seleccione la fecha de fin de la reserva" />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="pickerF"></mat-datepicker-toggle>
+        <mat-datepicker #pickerF></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Precio total</mat-label>
+        <input matInput formControlName="precioTotal" placeholder="Ingrese el precio total" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="estadoReserva">
+          <mat-option value="P">Pagado</mat-option>
+          <mat-option value="C">Credito</mat-option>
+          <mat-option value="D">Donacion</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Habitacion</mat-label>
+        <mat-select formControlName="habitacion" [(value)]="idHabitacionSelec" required>
+          <mat-option *ngFor="let c of listaHab" [value]="c.idHabitacion">
+            {{ c.tipoHabitacion }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Servicios Adicionales</mat-label>
+        <mat-select formControlName="sAdicionales" [(value)]="idServiciosAdicionalesSelec">
+          <mat-option [value]="null">Ninguno</mat-option>
+          <mat-option *ngFor="let s of listaSAd" [value]="s.idServiciosAdicionales">
+            {{ s.nombreServicio }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!--<mat-form-field appearance="fill">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="tipoProducto" [(value)]="id" required>
+          <mat-option *ngFor="let a of lista" [value]="a.id">
+            {{a.nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>-->
+
+      <button mat-raised-button color="primary" (click)="onSubmit()">Registrar</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+

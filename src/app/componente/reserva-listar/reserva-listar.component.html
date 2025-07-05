@@ -1,0 +1,77 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matsort>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="idReserva">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.idReserva}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cantidadPersonas">
+      <th mat-header-cell *matHeaderCellDef> cantidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.cantidadPersonas}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha_reserva">
+      <th mat-header-cell *matHeaderCellDef> Fecha de Reserva </th>
+      <td mat-cell *matCellDef="let element"> {{element.fecha_reserva}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaInicio">
+      <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
+      <td mat-cell *matCellDef="let element"> {{element.fechaInicio}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaFin">
+      <th mat-header-cell *matHeaderCellDef> Fecha de Fin </th>
+      <td mat-cell *matCellDef="let element"> {{element.fechaFin}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="precioTotal">
+      <th mat-header-cell *matHeaderCellDef> Precio </th>
+      <td mat-cell *matCellDef="let element"> {{element.precioTotal}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="estadoReserva">
+      <th mat-header-cell *matHeaderCellDef> EstadoReserva </th>
+      <td mat-cell *matCellDef="let element"> {{element.estadoReserva}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="habitacion">
+      <th mat-header-cell *matHeaderCellDef> Habitacion </th>
+      <td mat-cell *matCellDef="let element"> {{element.habitacion.tipoHabitacion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sAdicionales">
+      <th mat-header-cell *matHeaderCellDef> Servicios Adicionales </th>
+      <td mat-cell *matCellDef="let element"> {{element.sAdicionales}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="accion01">
+      <th mat-header-cell *matHeaderCellDef> Update </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button color="primary"
+                [routerLink]="['/reserva-edit',element.idReserva]">
+          <span class="material-icons">update</span>
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="accion02">
+      <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button color="warn"
+                (click)="openDialog(element.idReserva)"><span class="material-icons">delete_sweep</span></button>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

@@ -1,0 +1,37 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matsort>
+
+    <ng-container matColumnDef="idHotel">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+      <td mat-cell *matCellDef="let element"> {{ element.idHotel }} </td>
+    </ng-container>
+
+    <!-- Nombre del Hotel -->
+    <ng-container matColumnDef="nombreHotel">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre del Hotel </th>
+      <td mat-cell *matCellDef="let element"> {{ element.nombreHotel }} </td>
+    </ng-container>
+
+    <!-- Número de Habitaciones -->
+    <ng-container matColumnDef="tipoHabitacion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo Habitacion </th>
+      <td mat-cell *matCellDef="let element"> {{ element.tipoHabitacion }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="idHabitacionFavorita">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Id Habitacion Fav. </th>
+      <td mat-cell *matCellDef="let element"> {{ element.idHabitacionFavorita }} </td>
+    </ng-container>
+
+    <!-- Filas y Columnas -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!-- Paginador -->
+  <mat-paginator>
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Selector de página">
+  </mat-paginator>
+</div>

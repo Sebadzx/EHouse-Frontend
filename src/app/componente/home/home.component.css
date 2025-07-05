@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --color-main: #f8f8f8;
+  --color-secondary: rgb(0, 41, 60);
+  --color-third: rgb(27, 82, 107);
+  --color-text: #222831;
+  --color-text-opacity: rgba(23, 39, 48, 0.8);
+  --color-header-gradient: rgba(248, 248, 148, 0);
+  --font-main: 'Roboto', 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background: var(--color-main);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/* *********/
+.hero-img img{
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+
+#home {
+  background-color: green ;
+  color: black ;
+}
+/* **** Generic Containers ****** */
+
+.container:not(#home) {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+#home {
+  background-color: var(--color-secondary);
+  color: var(--color-main);
+}
+
+.container__leading {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: green;
+  background: linear-gradient(
+    91.7deg,
+    rgba(0, 0, 0, 0.5) -4.3%,
+    rgba(0, 0, 0, 0.75) 101.8%
+  ),
+  url(../img/House-background.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-size: 2rem;
+}
+
+#second{
+  font-size: 5rem;
+}
+.title {
+  font-family: 'Georgia', sans-serif;
+  padding: 0rem 2rem;
+  text-align: left;
+}
+/* *** About us Section *** */
+
+.about__leading {
+  padding: 2rem 0rem;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  line-height: 1.5rem;
+}
+
+
+/* ****** Footer ****** */
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-secondary);
+  color: var(--color-main);
+}
+
+.footer_link {
+  padding: 0em 0.3em;
+}
+
+.fab {
+  font-size: 1em;
+  user-select: none;
+  color: var(--color-main);
+}
+
+.fab:hover,
+.fab:visited,
+.fab:active,
+.fab:target {
+  color: var(--color-header-gradient);
+}
+/*
+.container {
+  padding: 20px;
+}
+
+.logout {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+*/

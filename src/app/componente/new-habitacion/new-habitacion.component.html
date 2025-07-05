@@ -1,0 +1,32 @@
+<mat-card class="example-card">
+  <mat-card-title>Formulario de Habitacion</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="habitacionForm" class="form-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo de Habitacion</mat-label>
+        <input matInput formControlName="tipoHabitacion" placeholder="Seleccione el tipo de habitación" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Disponibilidad</mat-label>
+        <input matInput formControlName="disponibilidad" placeholder="Ingrese la disponibilidad" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <input matInput formControlName="descripcionHabitacion" placeholder="Ingrese su descripcion" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Hotel</mat-label>
+        <mat-select formControlName="hotel" [(value)]="idHotelSeleccionado" required>
+          <mat-option *ngFor="let c of lista" [value]="c.idHotel">
+            {{ c.nombreHotel }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="onSubmit()">Registrar</button>
+    </form>
+  </mat-card-content>
+</mat-card>
