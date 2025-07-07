@@ -8,5 +8,5 @@ import {loginInterceptor} from "./interceptor/login.interceptor";
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
-    provideAnimationsAsync(), provideHttpClient(withInterceptors([loginInterceptor])), provideAnimationsAsync(), provideAnimationsAsync(), provideAnimationsAsync()]
+    provideAnimationsAsync(), provideHttpClient(withInterceptors([loginInterceptor])), provideAnimationsAsync(), provideAnimationsAsync(), provideAnimationsAsync(), provideAnimationsAsync()]
 };
